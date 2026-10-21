@@ -65,7 +65,6 @@ endmodule
 ## Truth Table
 <img width="1135" height="772" alt="table 1" src="https://github.com/user-attachments/assets/89423f99-e4ef-4f84-86b0-da8958608188" />
 
-<img width="795" height="311" alt="image" src="https://github.com/user-attachments/assets/dd4ba5b9-016b-4ae5-a693-f309c60c4c0e" />
 
 ## Simulation Procedure
 STEP 1 – Open Terminal
