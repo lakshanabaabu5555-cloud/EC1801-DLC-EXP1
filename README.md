@@ -58,8 +58,7 @@ module tb;
 endmodule
 
 ## Truth Table
-<img width="1135" height="772" alt="table 1" src="https://github.com/user-attachments/assets/89423f99-e4ef-4f84-86b0-da8958608188" />
-
+<img width="623" height="242" alt="image" src="https://github.com/user-attachments/assets/49648698-135b-4161-9a11-66a298ca2a25" />
 
 ## Simulation Procedure
 STEP 1 – Open Terminal
@@ -101,7 +100,10 @@ o	F
 5.	Verify that F = 1 whenever B and D are equal.
 6.	Verify that F = 0 whenever B and D are different.
 The waveform should agree with the truth table.
-<img width="1091" height="578" alt="image" src="https://github.com/user-attachments/assets/23955715-30e1-4fb2-8eac-47300b15463b" />
+
+### Output
+<img width="1816" height="957" alt="Screenshot 2026-10-22 100121" src="https://github.com/user-attachments/assets/d3df94eb-3836-4e22-acbb-2d851edcf7f5" />
+
 
 ### Expected Result
 The Boolean function
