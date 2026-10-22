@@ -57,11 +57,6 @@ module tb;
 
 endmodule
 
-
-
-
-
-    
 ## Truth Table
 <img width="1135" height="772" alt="table 1" src="https://github.com/user-attachments/assets/89423f99-e4ef-4f84-86b0-da8958608188" />
 
@@ -108,7 +103,6 @@ o	F
 The waveform should agree with the truth table.
 <img width="1091" height="578" alt="image" src="https://github.com/user-attachments/assets/23955715-30e1-4fb2-8eac-47300b15463b" />
 
- 
 ### Expected Result
 The Boolean function
 F(A,B,C,D)=Σm(0,2,5,7,8,10,13,15), which simplifies to F=B'D'+BD.
@@ -116,11 +110,8 @@ was minimized to F=B'D'+BD.
 and successfully implemented using Verilog HDL.
 <img width="942" height="573" alt="image" src="https://github.com/user-attachments/assets/429e18cd-4f9e-40c7-a1f1-918b49928c2d" />
 
-
 ## OUTPUT
 The design was compiled and simulated using Synopsys VCS, and the functionality was verified using DVE waveform analysis.
-
-
 Result
 Thus, the Boolean function was minimized, implemented using Verilog HDL, successfully simulated using Synopsys VCS, and verified using Synopsys DVE.
 
