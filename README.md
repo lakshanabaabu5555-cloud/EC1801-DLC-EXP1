@@ -100,13 +100,14 @@ o	F
 5.	Verify that F = 1 whenever B and D are equal.
 6.	Verify that F = 0 whenever B and D are different.
 The waveform should agree with the truth table.
+<img width="610" height="383" alt="image" src="https://github.com/user-attachments/assets/5b92e2e8-5df7-4e32-8f45-6c1c532deba4" />
+
 
 ### Expected Result
 The Boolean function
 F(A,B,C,D)=Σm(0,2,5,7,8,10,13,15), which simplifies to F=B'D'+BD.
 was minimized to F=B'D'+BD.
 and successfully implemented using Verilog HDL.
-<img width="942" height="573" alt="image" src="https://github.com/user-attachments/assets/429e18cd-4f9e-40c7-a1f1-918b49928c2d" />
 
 ## OUTPUT
 <img width="1816" height="957" alt="Screenshot 2026-10-22 100121" src="https://github.com/user-attachments/assets/d3df94eb-3836-4e22-acbb-2d851edcf7f5" />
