@@ -23,42 +23,63 @@ exp1_boolean_min.vcd	VCD waveform dump generated during simulation
 module fun (
 input wire A, 
 input wire B, 
+input wire C,
+input wire D,
 output wire F 
 ); 
-assign F = (~A) | B ;    // F = A' + B 
+assign F = (~B & ~D) | (B & D) ;    // F = B'D' + BD 
 endmodule
 
 ## TestBench Program
 module tb;
-    reg A, B;
-    wire F;
-    // Instantiate the design under test (DUT)
-    fun uut (
-        .A(A),
-        .B(B),
-        .F(F)
-    );
 
-    initial begin
-        // ---- VCD dump setup ----
-        $dumpfile("fun.vcd");   // name of the VCD file to be generated
-        $dumpvars(0, tb);   // dump all signals in this testbench hierarchy
+reg A, B, C, D;
+wire F;
 
-        // ---- Apply all 4 input combinations ----
-        $monitor("Time=%0t A=%b B=%b | F=%b", $time, A, B, F);
+fun uut (
+    .A(A),
+    .B(B),
+    .C(C),
+    .D(D),
+    .F(F)
+);
 
-        A = 0; B = 0; #10;
-        A = 0; B = 1; #10;
-        A = 1; B = 0; #10;
-        A = 1; B = 1; #10;
+initial begin
 
-        #10 $finish;
-    end
+    $dumpfile("fun.vcd");
+    $dumpvars(0, tb);
+
+    $monitor("Time=%0t A=%b B=%b C=%b D=%b F=%b",
+              $time, A, B, C, D, F);
+
+    A=0; B=0; C=0; D=0; #10;
+    A=0; B=0; C=0; D=1; #10;
+    A=0; B=0; C=1; D=0; #10;
+    A=0; B=0; C=1; D=1; #10;
+
+    A=0; B=1; C=0; D=0; #10;
+    A=0; B=1; C=0; D=1; #10;
+    A=0; B=1; C=1; D=0; #10;
+    A=0; B=1; C=1; D=1; #10;
+
+    A=1; B=0; C=0; D=0; #10;
+    A=1; B=0; C=0; D=1; #10;
+    A=1; B=0; C=1; D=0; #10;
+    A=1; B=0; C=1; D=1; #10;
+
+    A=1; B=1; C=0; D=0; #10;
+    A=1; B=1; C=0; D=1; #10;
+    A=1; B=1; C=1; D=0; #10;
+    A=1; B=1; C=1; D=1; #10;
+
+    $finish;
+end
 
 endmodule
 
 ## Truth Table
-<img width="623" height="242" alt="image" src="https://github.com/user-attachments/assets/49648698-135b-4161-9a11-66a298ca2a25" />
+<img width="622" height="675" alt="image" src="https://github.com/user-attachments/assets/974d1860-6f15-4b18-9a73-5e364340de7d" />
+
 
 ## Simulation Procedure
 STEP 1 – Open Terminal
@@ -100,7 +121,8 @@ o	F
 5.	Verify that F = 1 whenever B and D are equal.
 6.	Verify that F = 0 whenever B and D are different.
 The waveform should agree with the truth table.
-<img width="610" height="383" alt="image" src="https://github.com/user-attachments/assets/5b92e2e8-5df7-4e32-8f45-6c1c532deba4" />
+<img width="593" height="423" alt="image" src="https://github.com/user-attachments/assets/54843e71-8331-4dec-a2d6-785907f42068" />
+
 
 
 ### Expected Result
@@ -110,7 +132,8 @@ was minimized to F=B'D'+BD.
 and successfully implemented using Verilog HDL.
 
 ## OUTPUT
-<img width="1816" height="957" alt="Screenshot 2026-10-22 100121" src="https://github.com/user-attachments/assets/d3df94eb-3836-4e22-acbb-2d851edcf7f5" />
+<img width="1848" height="946" alt="image" src="https://github.com/user-attachments/assets/c803b3a5-279b-4599-8260-073ed43421f6" />
+
 The design was compiled and simulated using Synopsys VCS, and the functionality was verified using DVE waveform analysis.
 Result
 Thus, the Boolean function was minimized, implemented using Verilog HDL, successfully simulated using Synopsys VCS, and verified using Synopsys DVE.
